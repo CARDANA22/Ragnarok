@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "../sdk/Types/Vector.h"
+#include "../sdk/Types/GlowMode.h"
 
 
 class Entity
@@ -34,6 +35,7 @@ public:
     Vector3 getBonePos(int id);
     
     void setGlow(int glowEnable, int glowThroughWall, Vector3 pColor, float glowDistance);
+    void setHandGlow(int glowEnable, int glowThroughWall, GlowMode pGlowMode, Vector3 pColor);
     
     void ResetPointer();
     void Update();

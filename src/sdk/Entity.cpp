@@ -83,6 +83,14 @@ void Entity::setGlow(int glowEnable, int glowThroughWall, Vector3 pColor, float 
     Memory::Write<float>(m_basePointer + Offsets::glowDistance, glowDistance);
 }
 
+void Entity::setHandGlow(int glowEnable, int glowThroughWall, GlowMode pGlowMode, Vector3 pColor)
+{
+    Memory::Write<int>(m_basePointer + Offsets::glowEnable, glowEnable);
+    Memory::Write<int>(m_basePointer + Offsets::glowThroughWall, glowThroughWall);
+    Memory::Write<GlowMode>(m_basePointer + Offsets::glowMode, pGlowMode);
+    Memory::Write<Vector3>(m_basePointer + Offsets::glowColor, pColor);
+}
+
 bool Entity::isVisible()
 {
     const float lastVisibleTime = Entity::getLastVisibleTime();

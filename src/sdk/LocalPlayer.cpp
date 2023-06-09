@@ -86,6 +86,10 @@ void LocalPlayer::purgeLastView(float curtime){
     }
 }
 
+int LocalPlayer::ViewModelHandle(){
+    return Memory::Read<int>(m_basePointer+ Offsets::m_hViewModels) & 0xFFFF;
+}
+
 void LocalPlayer::Update() {
     m_basePointer = Memory::Read<unsigned long>(
         Memory::GetLastModuleBase() + Offsets::LocalPlayer

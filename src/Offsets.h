@@ -31,6 +31,9 @@ namespace Offsets {
     const unsigned long glowThroughWall = 0x03c0 + 0x10; // [RecvTable.DT_HighlightSettings] -> m_highlightServerContextID + 0x10
     const unsigned long glowColor = 0x01b8 + 0x18; // [RecvTable.DT_HighlightSettings] -> m_highlightParams + 0x18
     const unsigned long glowDistance = 0x3b4;        // m_highlightServerFadeEndTimes + 52(0x34)
+    const unsigned long glowMode = (0x02c0 + 0x4);   // m_highlightFunctionBits + 0x4
+
+    const unsigned long m_hViewModels=0x2d60 + 0xC;                //m_hViewModels +0xC
 
     const unsigned long m_customScriptInt = 0x1648; // [RecvTable.DT_PropSurvival] -> m_customScriptInt
 

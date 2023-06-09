@@ -91,3 +91,42 @@ void Glow::Update() {
         
     }
 }
+
+void Glow::hand_model_glow()
+    {
+        if (!Level::isPlayable())
+            return;
+
+        Vector3 color {5.f , 0.f, 0.f};
+
+        int ViewModelHandle = LocalPlayer::ViewModelHandle();
+
+        Entity* ViewModel = EntityList::GetEntity(ViewModelHandle* 0x20);
+
+        color = Rainbow(0.007f);
+        
+        
+
+        ViewModel->setHandGlow(1,2,{126, 101, 46, 0}, color); // {109, 112, 114}
+    }
+
+    
+
+Vector3 Glow::Rainbow(float delay)
+{
+    static uint32_t cnt = 0;
+    float freq = delay;
+
+    if (++cnt >= (uint32_t)-1)
+    {
+        cnt = 0;
+    }
+    if (delay != oldDelay)
+    {
+        cnt = 0;
+        oldDelay = delay;
+    }
+    Vector3 cur = {std::sin(freq * cnt + 0) * 1.3f, std::sin(freq * cnt + 2) * 1.6f, std::sin(freq * cnt + 4) * 1.9f};
+
+    return cur;
+}

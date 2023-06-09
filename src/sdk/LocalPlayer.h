@@ -31,5 +31,7 @@ namespace LocalPlayer
     void addLastViewAngles(float curtime);
     void purgeLastView(float curtime);
 
+    int ViewModelHandle();
+
     void Update();
 }
